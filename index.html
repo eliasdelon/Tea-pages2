@@ -4,82 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Горячев Чай</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Cormorant+Infant:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --tea-ink: #3E2723; /* Цвет чайных чернил */
-            --parchment: #FFFDF5; /* Пергамент */
-            --vermillion: #8B4513; /* Киноварь */
+            --text-color: #333333;
+            --light-bg: #FFFFFF;
+            --accent: #8B5A2B;
         }
         
         body {
-            font-family: 'Cormorant Infant', serif;
+            font-family: 'Noto Serif', serif;
             max-width: 700px;
             margin: 0 auto;
             padding: 20px;
-            line-height: 1.8;
-            color: var(--tea-ink);
+            line-height: 1.7;
+            color: var(--text-color);
             background: url('background.jpg') center/cover fixed;
-            letter-spacing: 0.3px;
         }
         
         .content {
-            background: rgba(255, 253, 245, 0.9);
+            background-color: var(--light-bg);
             padding: 40px;
-            margin: 30px 0;
-            box-shadow: 0 3px 10px rgba(62, 39, 35, 0.1);
-            border: 1px solid rgba(139, 69, 19, 0.3);
-            backdrop-filter: blur(1px);
+            margin: 40px 0;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            opacity: 0.96;
         }
         
         h1 {
-            font-family: 'EB Garamond', serif;
-            font-weight: 700;
-            color: var(--vermillion);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 500;
+            color: var(--accent);
             text-align: center;
-            margin: 0 0 25px;
-            font-size: 2.4rem;
-            letter-spacing: 1px;
-            font-style: italic;
-            border-bottom: 2px solid var(--vermillion);
-            padding-bottom: 10px;
+            margin: 0 0 30px;
+            font-size: 2.2rem;
+            border-bottom: 1px solid #EEE;
+            padding-bottom: 12px;
         }
         
         p {
             margin-bottom: 25px;
-            font-size: 1.15rem;
-            text-align: justify;
-            hyphens: auto;
-        }
-        
-        .first-paragraph::first-letter {
-            font-family: 'EB Garamond', serif;
-            float: left;
-            font-size: 3.5rem;
-            line-height: 0.8;
-            padding: 5px 8px 0 0;
-            color: var(--vermillion);
+            font-size: 1.1rem;
+            text-align: left;
         }
         
         a {
-            color: var(--vermillion);
+            color: var(--accent);
             text-decoration: none;
-            border-bottom: 1px dashed;
+            border-bottom: 1px solid rgba(139, 90, 43, 0.3);
             transition: all 0.2s;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 2px;
         }
         
         a:hover {
-            border-bottom-style: solid;
-            color: #6B4423;
+            border-bottom-color: var(--accent);
+        }
+        
+        /* Индикатор кликабельности */
+        a::after {
+            content: "↗";
+            font-size: 0.8em;
+            margin-left: 3px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: inline-block;
+            transform: translateY(-1px);
+        }
+        
+        a:hover::after {
+            opacity: 0.7;
         }
         
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.9rem;
-            color: var(--tea-ink);
-            opacity: 0.8;
-            font-family: 'EB Garamond', serif;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-family: 'Open Sans', sans-serif;
         }
     </style>
 </head>
@@ -87,13 +91,13 @@
     <div class="content">
         <h1>Горячев Чай</h1>
         
-        <p class="first-paragraph">"Горячев Чай" сделан с любовью. Если после заваривания вам слишком горячо от этой любви, чтобы не обжечься вы можете использовать <a href="https://tbank.ru/cf/7KsMMeUYUwv">первый закон термодинамики</a>.</p>
+        <p>"Горячев Чай" сделан с любовью. Если после заваривания вам слишком горячо от этой любви, чтобы не обжечься вы можете использовать <a href="https://tbank.ru/cf/7KsMMeUYUwv" title="Узнать больше">первый закон термодинамики</a>.</p>
         
         <p>Закон гласит: энергия не возникает из ниоткуда и не исчезает, она передается от одного тела к другому или просто меняет свою форму. В этом существует определенная зависимость между количеством тепла и качеством работы. Когда ты будешь держать чашку в руках — не торопись. Растворись в миге и вдохни воздух этих полей.</p>
     </div>
     
     <footer>
-        © Лето 7532 от Сотворения Мира | Чайное благодеяние
+        © 2024 Горячев Чай | С любовью к каждому листу
     </footer>
 </body>
 </html>
