@@ -9,6 +9,7 @@
         :root {
             --text-color: #2E2E2E;
             --accent: #8B5A2B;
+            --accent-light: rgba(139, 90, 43, 0.15);
         }
         
         body {
@@ -47,23 +48,35 @@
         }
         
         a {
+            color: var(--text-color);
+            text-decoration: none;
+            background-color: var(--accent-light);
+            padding: 0 2px;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        a:hover {
             color: var(--accent);
-            text-decoration: underline;
-            text-decoration-color: rgba(139, 90, 43, 0.4);
-            text-underline-offset: 3px;
-            font-weight: 700;
-            transition: all 0.2s;
+            background-color: rgba(139, 90, 43, 0.25);
         }
         
-        a:hover, a:active {
-            text-decoration-color: var(--accent);
-        }
-        
-        /* Индикатор внешней ссылки */
-        a[href^="http"]::after {
-            content: " ↗";
+        /* Изящный указатель ссылки */
+        a::after {
+            content: "→";
             font-size: 0.85em;
+            margin-left: 3px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
             display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        a:hover::after {
+            opacity: 0.8;
         }
         
         footer {
@@ -82,6 +95,11 @@
             p {
                 text-align: left;
                 hyphens: none;
+            }
+            a::after {
+                position: static;
+                transform: none;
+                display: inline;
             }
         }
     </style>
